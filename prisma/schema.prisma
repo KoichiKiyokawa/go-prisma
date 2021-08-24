@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  // `db push`コマンドの対象となるdbファイルとサーバーを起動したときの対象が違ってしまう
+  url      = env("DATABASE_URL")
+}
+
+generator db {
+  provider = "go run github.com/prisma/prisma-client-go"
+}
+
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
