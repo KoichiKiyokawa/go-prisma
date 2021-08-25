@@ -9,7 +9,7 @@ import (
 
 func UserRouter(e *echo.Echo, dbClient *db.PrismaClient) {
 	userHandler := handler.NewUserHandler(dbClient)
-	g := e.Group("/users")
+	g := e.Group("/users/")
 	g.GET("", userHandler.Index)
 	g.GET(":id", userHandler.Show)
 	g.POST("", userHandler.Create)

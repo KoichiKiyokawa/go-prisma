@@ -3,8 +3,10 @@ module go-prisma
 go 1.16
 
 require (
+	github.com/gorilla/sessions v1.2.1
 	github.com/iancoleman/strcase v0.0.0-20190422225806-e506e3ef7365
 	github.com/joho/godotenv v1.3.0
+	github.com/labstack/echo-contrib v0.11.0
 	github.com/labstack/echo/v4 v4.5.0
 	github.com/prisma/prisma-client-go v0.10.0
 	github.com/shopspring/decimal v1.2.0

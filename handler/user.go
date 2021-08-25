@@ -13,6 +13,12 @@ type UserHandler struct {
 	client *db.PrismaClient
 }
 
+// TODO: この構造体を使えないか。。。
+type UserResponse struct {
+	Password string `json:"-"`
+	db.UserModel
+}
+
 func NewUserHandler(client *db.PrismaClient) *UserHandler {
 	return &UserHandler{client}
 }
@@ -23,6 +29,7 @@ func (h *UserHandler) Index(c echo.Context) error {
 		return c.String(http.StatusInternalServerError, "error get users")
 	}
 
+	// TODO: omit password
 	return c.JSON(http.StatusOK, users)
 }
 
