@@ -2,6 +2,7 @@
 package main
 
 import (
+	"go-prisma/prisma/db"
 	"go-prisma/router"
 	"log"
 

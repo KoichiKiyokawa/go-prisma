@@ -3,7 +3,6 @@
 
 datasource db {
   provider = "postgresql"
-  // `db push`コマンドの対象となるdbファイルとサーバーを起動したときの対象が違ってしまう
   url      = env("DATABASE_URL")
 }
 
