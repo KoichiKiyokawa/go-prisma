@@ -72,3 +72,8 @@ func (h *UserHandler) Update(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, updatedUser)
 }
+
+func (h *UserHandler) Delete(c echo.Context) error {
+	// h.client.User
+	return c.JSON(http.StatusOK, map[string]string{})
+}

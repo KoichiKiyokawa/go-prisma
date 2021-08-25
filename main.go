@@ -2,10 +2,8 @@
 package main
 
 import (
-	"go-prisma/prisma/db"
 	"go-prisma/router"
 	"log"
-	"net/http"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -29,7 +27,5 @@ func main() {
 
 	router.SetupRoutes(e, client)
 
-	if err := e.Start(":8080"); err != http.ErrServerClosed {
-		log.Fatal(err)
-	}
+	e.Logger.Fatal(e.Start(":8080"))
 }
